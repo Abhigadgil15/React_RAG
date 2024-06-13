@@ -6,16 +6,16 @@ import { BounceLoader } from 'react-spinners';
 import ReactMarkdown from 'react-markdown';
 
 const api = axios.create({
-    baseURL: "http://localhost:8000"
+    baseURL: "http://frontend-jr15rtud5-abhinav-gadgils-projects.vercel.app"
 });
 
-const Expander = ({ title, content, source }) => {
+const Expander = ({ title, content}) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="expander">
             <b onClick={() => setIsOpen(!isOpen)}>{title}</b>
             {isOpen && <p className="expander-content">{content}</p>}
-            {isOpen && <p className="expander-content">Source: {source}</p>}
+            {/* {isOpen && <p className="expander-content">Source: {source}</p>} */}
         </div>
     );
 };
@@ -74,8 +74,8 @@ const QuestionForm = () => {
                     <div className="results-documents">
                         <h2>Documents:</h2>
                         <ul>
-                            {documents.map((document, index) => (
-                                <Expander key={index} title={document.page_content.split(" ").slice(0, 5).join(" ") + "..."} content={document.page_content} source={document.metadata.source_url} />
+                            {documents.map((documents, index) => (
+                                <Expander key={index} title={documents.page_content.split(" ").slice(0, 5).join(" ") + "..."} content={documents.page_content}/>
                             ))}
                         </ul>
                     </div>

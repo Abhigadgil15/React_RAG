@@ -12,7 +12,9 @@ app = FastAPI(
 )
 
 origins = [
-    "http://localhost:3000"
+    "http://backend-5vnuirb13-abhinav-gadgils-projects.vercel.app",
+    "http://frontend-jr15rtud5-abhinav-gadgils-projects.vercel.app"
+    
 ]
 
 app.add_middleware(
@@ -40,9 +42,9 @@ def chat(message: Message):
     return JSONResponse(content=response_content, status_code=200)
 
 @app.post('/indexing', description="Index a website through endpoint")
-def indexing(request: IndexingRequest):
+def indexing(url: IndexingRequest):
     try:
-        upload_website_to_collection(request.url)
+        upload_website_to_collection(url.message)
         return JSONResponse(content={"response": "Indexing successful"}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=400)

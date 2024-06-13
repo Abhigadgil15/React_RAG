@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Abhinav Gadgil <64949128+Abhigadgil15@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.30.1"
+langchain = "^0.2.1"
+qdrant-client = "^1.9.1"
+openai = "^1.31.0"
+langchain-community = "^0.2.1"
+python-decouple = "^3.8"
+beautifulsoup4 = "^4.12.3"
+tiktoken = "^0.7.0"
+pywin32 = "^306"
+pypiwin32 = "^223"
+fastapi = "^0.111.0"
+langchain-openai = "^0.1.8"
+langchain-qdrant = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
